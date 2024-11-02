@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PaymentSystem.DataLayer\**" />
+    <Compile Remove="PaymentSystem.IntegrationTests\**" />
+    <Compile Remove="PaymentSystem.Services\**" />
+    <Compile Remove="PaymentSystem.UnitTest\**" />
+    <Content Remove="PaymentSystem.DataLayer\**" />
+    <Content Remove="PaymentSystem.IntegrationTests\**" />
+    <Content Remove="PaymentSystem.Services\**" />
+    <Content Remove="PaymentSystem.UnitTest\**" />
+    <EmbeddedResource Remove="PaymentSystem.DataLayer\**" />
+    <EmbeddedResource Remove="PaymentSystem.IntegrationTests\**" />
+    <EmbeddedResource Remove="PaymentSystem.Services\**" />
+    <EmbeddedResource Remove="PaymentSystem.UnitTest\**" />
+    <None Remove="PaymentSystem.DataLayer\**" />
+    <None Remove="PaymentSystem.IntegrationTests\**" />
+    <None Remove="PaymentSystem.Services\**" />
+    <None Remove="PaymentSystem.UnitTest\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentSystem\PaymentSystem.Services\PaymentSystem.Services.csproj" />
+  </ItemGroup>
+
+</Project>
