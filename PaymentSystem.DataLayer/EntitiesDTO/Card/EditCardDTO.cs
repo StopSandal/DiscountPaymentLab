@@ -1,9 +1,13 @@
-﻿namespace PaymentSystem.DataLayer.EntitiesDTO.Card
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PaymentSystem.DataLayer.EntitiesDTO.Card
 {
-    public class EditCardDTO
-    {
-        public string? CardName { get; set; }
-        public DateTime? ExpirationDate { get; set; }
-        public int? CVV { get; set; }
-    }
+	public class EditCardDTO
+	{
+		public long Id { get; set; }
+		public int? CardNumber { get; set; }
+
+		[Range(0, 1)]
+		public decimal? Discount { get; set; }
+	}
 }

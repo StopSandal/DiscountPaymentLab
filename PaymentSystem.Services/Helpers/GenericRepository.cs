@@ -12,8 +12,8 @@ namespace PaymentSystem.Services.Helpers
     /// <inheritdoc cref="IRepositoryAsync{TEntity}"/>
     public class GenericRepository<TEntity> : IRepositoryAsync<TEntity> where TEntity : class
     {
-        internal DbContext context;
-        internal DbSet<TEntity> dbSet;
+        public DbContext context;
+        public DbSet<TEntity> dbSet;
         /// <summary>
         /// An initializing new instance of the  <see cref="GenericRepository{TEntity}"/> class with specified database context
         /// </summary>

@@ -1,18 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaymentSystem.DataLayer.Entities
 {
-    public class Card
-    {
-        public long ID { get; set; }
-        public string CardNumber { get; set; }
-        public string CardName { get; set; }
-        public DateTime ExpirationDate { get; set; }
-        public int CVV { get; set; }
-        [Column(TypeName = "decimal(18, 2)")]
-        public decimal Balance { get; set; }
-        public string CurrencyType { get; set; }
+	public class Card
+	{
+		public long Id { get; set; }
+		public int CardNumber { get; set; }
 
-
-    }
+		[Range(0, 1)]
+		[Column(TypeName = "decimal(18, 2)")]
+		public decimal Discount { get; set; }
+	}
 }

@@ -2,17 +2,13 @@
 
 namespace PaymentSystem.DataLayer.EntitiesDTO.Card
 {
-    public class AddCardDTO
-    {
-        [Required]
-        public string CardNumber { get; set; }
-        [Required]
-        public string CardName { get; set; }
-        [Required]
-        public DateTime ExpirationDate { get; set; }
-        [Required]
-        public int CVV { get; set; }
-        [Required]
-        public string CurrencyType { get; set; }
-    }
+	public class AddCardDTO
+	{
+		[Required]
+		public int CardNumber { get; set; }
+
+		[Range(0, 1)]
+		[Required]
+		public decimal Discount { get; set; }
+	}
 }
